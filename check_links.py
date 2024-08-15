@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 # Optional: GitHub Personal Access Token (PAT) for private repo access
 PAT_TOKEN = os.getenv("PAT_TOKEN")
+directory = os.getenv("directory", ".")
 
 
 def fetch_url(url):
@@ -79,7 +80,7 @@ def find_markdown_and_notebooks(directory):
 
 if __name__ == "__main__":
     # Directory to search for markdown and notebook files
-    directory = "path_to_your_repo"
+    directory = os.getenv("directory", ".")
 
     # Find all markdown and notebook files in the directory
     files_to_check = find_markdown_and_notebooks(directory)
