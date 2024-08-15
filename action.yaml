@@ -1,0 +1,35 @@
+name: Markdown and Jupyter Notebook Link Checker
+description: Validate links in Markdown files and Jupyter Notebooks
+author: mr8lu
+branding:
+  icon: 'link'
+  color: 'blue'
+inputs:
+  PAT_TOKEN:
+    description: 'GitHub PAT for authentication'
+    required: false
+  directory:
+    description: 'The directory to search for markdown and notebook files'
+    required: true
+    default: '.'
+outputs:
+  broken_links_found:
+    description: 'Indicates if any broken links were found'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up python
+      shell: bash
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run Link Checker
+      shell: bash
+      env:
+        PAT_TOKEN: ${{ inputs.PAT_TOKEN }}
+        directory: ${{ inputs.directory }}
+      run: |
+        source venv/bin/activate
+        python check_links.py
