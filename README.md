@@ -2,6 +2,8 @@
 Github Action for validating Markdown and Jupyter Notebook links
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/mr8lu/link-validator)
+![GitHub](https://img.shields.io/github/license/mr8lu/your-repo-name)
+
 
 ## Overview
 
