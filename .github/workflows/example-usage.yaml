@@ -1,0 +1,16 @@
+name: Link Checker
+
+on: [push, pull_request]
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Link Checker
+        uses: mr8lu/link-validator@v1
+        with:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}  # Optional
+          directory: '.'  # Adjust the directory as needed

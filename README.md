@@ -1,9 +1,9 @@
 # link-validator
 Github Action for validating Markdown and Jupyter Notebook links
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/mr8lu/your-repo-name)
-![GitHub](https://img.shields.io/github/license/mr8lu/your-repo-name)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mr8lu/your-repo-name/link-check.yml)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/mr8lu/link-validator)
+![GitHub](https://img.shields.io/github/license/mr8lu/link-validator)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mr8lu/link-validator/link-check.yml)
 
 ## Overview
 
@@ -50,7 +50,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Link Checker
-        uses: mr8lu/your-repo-name@v1
+        uses: mr8lu/link-validator@v1
         with:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}  # Optional
           directory: '.'  # Adjust the directory as needed
+```
