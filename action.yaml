@@ -18,12 +18,18 @@ outputs:
 runs:
   using: 'composite'
   steps:
+    - name: Checkout script repository
+      uses: actions/checkout@v3
+      with:
+        repository: mr8lu/link-validator
+        path: .github/workflows/script
     - name: Set up python
       shell: bash
       run: |
         python -m venv venv
         source venv/bin/activate
-        pip install beautifulsoup4==4.12.3 nbformat==5.10.4 requests==2.32.2
+        pip install -r .github/workflows/script/requirements.txt
+        # pip install beautifulsoup4==4.12.3 nbformat==5.10.4 requests==2.32.2
 
     - name: Run Link Checker
       shell: bash
@@ -32,4 +38,4 @@ runs:
         directory: ${{ inputs.directory }}
       run: |
         source venv/bin/activate
-        python check_links.py
+        python .github/workflows/script/check_links.py
