@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Link Checker
-        uses: mr8lu/link-validator@v1
+        uses: mr8lu/link-validator@v1.0.0
         with:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}  # Optional
           directory: '.'  # Adjust the directory as needed
