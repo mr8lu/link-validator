@@ -16,6 +16,9 @@ def fetch_url(url):
         response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
             return "Valid"
+        elif response.status_code == 403 and "sciencedirect.com" in url:
+            # Bypass 403 for sciencedirect.com
+            return "Valid - Additional Check may required"
         else:
             return f"Failed (Status Code: {response.status_code})"
     except requests.exceptions.RequestException as e:
