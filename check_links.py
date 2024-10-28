@@ -20,6 +20,12 @@ def fetch_url(url):
         elif response.status_code == 403 and "sciencedirect.com" in url:
             # Bypass 403 for sciencedirect.com
             return "Valid - Additional Check may required"
+        elif response.status_code == 403 and "platform.openai.com" in url:
+            # Bypass 403 for platform.openai.com
+            return "Valid - Additional Check may required"
+        elif response.status_code == 403 and "niaid.nih.gov" in url:
+            # Bypass 403 for niaid.nih.gov
+            return "Valid - Additional Check may required"
         else:
             return f"Failed (Status Code: {response.status_code})"
         time.sleep(1)
