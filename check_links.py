@@ -1,3 +1,4 @@
+import time
 import requests
 import nbformat
 import os
@@ -21,7 +22,7 @@ def fetch_url(url):
             return "Valid - Additional Check may required"
         else:
             return f"Failed (Status Code: {response.status_code})"
-        sleep(1)
+        time.sleep(1)
     except requests.exceptions.RequestException as e:
         return f"Failed (Exception: {str(e)})"
 
