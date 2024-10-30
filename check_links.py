@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 # Optional: GitHub Personal Access Token (PAT) for private repo access
 PAT_TOKEN = os.getenv("PAT_TOKEN")
 directory = os.getenv("directory", ".")
+print("Testing v1.0.1")
 
 
 def fetch_url(url):
